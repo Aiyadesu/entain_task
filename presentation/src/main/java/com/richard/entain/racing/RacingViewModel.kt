@@ -14,8 +14,8 @@ import javax.inject.Inject
 class RacingViewModel @Inject constructor(
     private val racingUseCase: RacingUseCase
 ) : ViewModel() {
-    private val _racingData = MutableLiveData<RacingDomainModel>()
-    val dataResult: LiveData<RacingDomainModel> get() = _racingData
+    private val _racingData = MutableLiveData<List<RacingDomainModel?>>()
+    val dataResult: LiveData<List<RacingDomainModel?>> get() = _racingData
 
     init {
         getRacingData()
