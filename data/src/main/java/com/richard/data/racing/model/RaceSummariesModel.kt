@@ -3,7 +3,7 @@ package com.richard.data.racing.model
 data class RaceSummariesModel(
     val raceId: String,
     val raceName: String,
-    val raceNumber: String,
+    val raceNumber: Int,
     val meetingId: String,
     val meetingName: String,
     val categoryId: String,
