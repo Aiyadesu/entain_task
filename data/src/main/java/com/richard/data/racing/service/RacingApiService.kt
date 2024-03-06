@@ -5,9 +5,9 @@ import retrofit2.http.GET
 import retrofit2.http.Query
 
 interface RacingApiService {
-    @GET("/racing")
+    @GET("racing/")
     suspend fun getRaces(
         @Query("method") method: String,
-        @Query("count") count: String,
+        @Query("count") count: Int,
     ): RacingResponseModel
 }

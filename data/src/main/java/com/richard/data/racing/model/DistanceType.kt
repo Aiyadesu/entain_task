@@ -1,7 +1,7 @@
 package com.richard.data.racing.model
 
-data class DistanceTypeModel(
+data class DistanceType(
     val id: String,
     val name: String,
-    val shortName: String,
+    val short_name: String,
 )

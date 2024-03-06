@@ -1,6 +1,10 @@
 package com.richard.data.racing.model
 
+import com.google.gson.annotations.SerializedName
+
 data class RacingResponseModel(
-    val nextToGoIds: List<String>,
-    val raceSummaries: RaceSummariesModel,
+    @SerializedName("status")
+    val status: Int,
+    @SerializedName("data")
+    val data: RacingDataModel
 )

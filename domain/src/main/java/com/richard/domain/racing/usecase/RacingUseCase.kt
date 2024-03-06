@@ -8,11 +8,11 @@ import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
 class RacingUseCase @Inject constructor(
-    val racingApiService: RacingApiService,
+    private val racingApiService: RacingApiService,
 ) {
-    suspend fun getRaces(): RacingDomainModel? {
+    suspend fun getRaces(): List<RacingDomainModel?> {
         val method = "nextraces"
-        val count = "10"
+        val count = 10
         return withContext(Dispatchers.IO) {
             return@withContext racingApiService.getRaces(method, count).toDomainModel()
         }
