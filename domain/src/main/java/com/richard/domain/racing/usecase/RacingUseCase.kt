@@ -14,8 +14,7 @@ class RacingUseCase @Inject constructor(
         val method = "nextraces"
         val count = "10"
         return withContext(Dispatchers.IO) {
-//            return@withContext racingApiService.getRaces(method, count).toDomainModel()
-            null
+            return@withContext racingApiService.getRaces(method, count).toDomainModel()
         }
     }
 }
