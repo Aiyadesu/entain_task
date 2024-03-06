@@ -23,6 +23,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".racing.RacingActivity"
+            android:exported="true"
+            android:label="@string/racing_activity_name"
+            android:theme="@style/Theme.Entain">
+        </activity>
     </application>
 
 </manifest>

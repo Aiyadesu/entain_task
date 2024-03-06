@@ -1,6 +1,5 @@
-package com.richard.entain
+package com.richard.entain.racing
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -8,16 +7,10 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
-import com.richard.entain.racing.RacingActivity
 import com.richard.entain.ui.theme.EntainTheme
 
-class MainActivity : ComponentActivity() {
+class RacingActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
-        fun navigateToRacingScreen() {
-            intent = Intent(this, RacingActivity::class.java)
-            startActivity(intent)
-        }
-
         super.onCreate(savedInstanceState)
         setContent {
             EntainTheme {
@@ -26,7 +19,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    MainScreen { navigateToRacingScreen() }
+                    RacingScreen()
                 }
             }
         }
