@@ -124,27 +124,41 @@ private fun RaceInformation(
     race: RacingDomainModel,
     onCountdownFinished: () -> Unit,
 ) {
-    Text(
+    Row(
         modifier = Modifier
-            .semantics {
-                contentDescription = "Meeting Name: ${race.meetingName}"
-            },
-        text = "${stringResource(R.string.meeting_name_label)} ${race.meetingName}"
-    )
-    Text(
-        modifier = Modifier
-            .semantics {
-                contentDescription = "Race Number: ${race.raceNumber}"
-            },
-        text = "${stringResource(R.string.race_number_label)} ${race.raceNumber}"
-    )
+            .fillMaxWidth(),
+        horizontalArrangement = Arrangement.SpaceBetween,
+        verticalAlignment = Alignment.CenterVertically,
+    ) {
+        Column {
+            Text(
+                modifier = Modifier
+                    .semantics {
+                        contentDescription = "Meeting Name: ${race.meetingName}"
+                    },
+                text = "${stringResource(R.string.meeting_name_label)} ${race.meetingName}"
+            )
+            Text(
+                modifier = Modifier
+                    .semantics {
+                        contentDescription = "Race Number: ${race.raceNumber}"
+                    },
+                text = "${stringResource(R.string.race_number_label)} ${race.raceNumber}"
+            )
+        }
 
-    CountdownTimer(
-        onCountdownFinished = {
-            onCountdownFinished()
-        },
-        initialValue = race.initialCountdownTime,
-    )
+        Column {
+            CountdownTimer(
+                onCountdownFinished = {
+                    onCountdownFinished()
+                },
+                initialValue = race.initialCountdownTime,
+            )
+        }
+    }
+
+
+
 }
 
 @Composable
