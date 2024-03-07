@@ -25,6 +25,8 @@ A polling strategy was implemented for the automatic data refreshes. However, an
 
 
 # Testing Notes
+Build the app in Android Studio and launch it to an emulator (I used Pixel 6 API 33) or your phone.
+
 Press 'Next to Go' which will navigate you to a new screen.
 
 Select each of the filters: Horse, Harness & Greyhounds and observe the races change accordingly.
