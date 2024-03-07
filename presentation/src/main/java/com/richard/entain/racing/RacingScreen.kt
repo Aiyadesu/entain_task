@@ -172,14 +172,14 @@ private fun CountdownTimer(
 ) {
     var countdownValue by remember { mutableLongStateOf(initialValue) }
 
-    val countdownThreshold = -60
-    val countdownInterval = 1000L
-    val countdownIntervalInSeconds = 1
+    val countdownThresholdSeconds = -60
+    val countdownIntervalMilliseconds = 1000L
+    val countdownIntervalSeconds = 1
 
     LaunchedEffect(countdownValue) {
-        while (countdownValue > countdownThreshold) {
-            delay(countdownInterval)
-            countdownValue -= countdownIntervalInSeconds
+        while (countdownValue > countdownThresholdSeconds) {
+            delay(countdownIntervalMilliseconds)
+            countdownValue -= countdownIntervalSeconds
         }
 
         onCountdownFinished()
