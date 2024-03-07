@@ -64,6 +64,7 @@ dependencies {
     implementation("androidx.compose.material3:material3")
     implementation("androidx.compose.runtime:runtime-livedata:1.5.4")
     implementation("com.google.dagger:hilt-android:2.50")
+    implementation("androidx.test.ext:junit-ktx:1.1.5")
     kapt("com.google.dagger:hilt-android-compiler:2.50")
     testImplementation("junit:junit:4.13.2")
     testImplementation("io.mockk:mockk:1.13.10")
