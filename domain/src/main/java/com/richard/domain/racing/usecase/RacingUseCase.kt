@@ -36,6 +36,10 @@ class RacingUseCase @Inject constructor(
     }
 
     private fun List<RacingDomainModel>.setMaximumSize(maximumRacesShownIndex: Int): MutableList<RacingDomainModel> {
-        return this.subList(START_INDEX, maximumRacesShownIndex) as MutableList<RacingDomainModel>
+        return if (this.size >= maximumRacesShownIndex) {
+            this.subList(START_INDEX, maximumRacesShownIndex) as MutableList<RacingDomainModel>
+        } else {
+            this as MutableList<RacingDomainModel>
+        }
     }
 }
