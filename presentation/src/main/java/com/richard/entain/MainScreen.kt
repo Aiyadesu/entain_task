@@ -9,6 +9,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 
 @Composable
@@ -19,7 +20,11 @@ fun MainScreen(
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
-        Text(stringResource(R.string.main_screen_description))
+        Text(
+            text = stringResource(R.string.main_screen_description),
+            textAlign = TextAlign.Center,
+        )
+
         Button(
             modifier = Modifier
                 .padding(4.dp),
