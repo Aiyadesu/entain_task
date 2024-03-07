@@ -1,5 +1,6 @@
 package com.richard.entain.racing
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -7,6 +8,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.material3.Divider
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FilterChip
 import androidx.compose.material3.Text
@@ -35,9 +37,7 @@ fun RacingScreen(
     racingViewModel: RacingViewModel,
 ) {
     Column(
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(8.dp),
+        modifier = Modifier.fillMaxWidth(),
         verticalArrangement = Arrangement.Top,
         horizontalAlignment = Alignment.Start,
     ) {
@@ -50,7 +50,10 @@ fun RacingScreen(
         val races = remember { racingViewModel.races }
 
         Row(
-            modifier = Modifier.fillMaxWidth(),
+            modifier = Modifier
+                .background(Color.LightGray)
+                .fillMaxWidth()
+                .padding(8.dp),
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.SpaceEvenly,
         ) {
@@ -108,7 +111,9 @@ fun RacingScreen(
         }
 
         LazyColumn(
-            modifier = Modifier.fillMaxWidth(),
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(8.dp),
             verticalArrangement = Arrangement.spacedBy(8.dp),
             horizontalAlignment = Alignment.Start,
         ) {
@@ -126,7 +131,8 @@ private fun RaceInformation(
 ) {
     Row(
         modifier = Modifier
-            .fillMaxWidth(),
+            .fillMaxWidth()
+            .padding(bottom = 8.dp),
         horizontalArrangement = Arrangement.SpaceBetween,
         verticalAlignment = Alignment.CenterVertically,
     ) {
@@ -156,9 +162,7 @@ private fun RaceInformation(
             )
         }
     }
-
-
-
+    Divider()
 }
 
 @Composable
@@ -204,5 +208,4 @@ private fun setSelectedRaceFilter(
         isGreyhoundSelected -> SelectedRace.GREYHOUND
         else -> SelectedRace.NONE
     }
-
 }
