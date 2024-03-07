@@ -1,6 +1,12 @@
 <resources>
-    <string name="app_name">entain</string>
+    <string name="module_name">entain</string>
     <string name="next_to_go_button_label">Next to Go Races</string>
     <string name="main_screen_description">Press the button to see our Next to Go races!</string>
     <string name="racing_activity_name">Racing</string>
+    <string name="seconds">%ss</string>
+    <string name="filter_horse_label">Horse</string>
+    <string name="filter_harness_label">Harness</string>
+    <string name="filter_greyhound_label">Greyhound</string>
+    <string name="meeting_name_label">Meeting Name:</string>
+    <string name="race_number_label">Race Number:</string>
 </resources>
